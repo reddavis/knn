@@ -1,18 +1,31 @@
-= k_nearest_neighbours
+= K Nearest Neighbours
 
-Description goes here.
+Simple KNN Ruby implementation
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Install
+
+  gem sources -a -http://gemcutter.org
+  sudo gem install naive_bayes
+
+== How To Use
+
+  require 'rubygems'
+  require 'knn'
+  
+  data = Array.new(100000) { Array.new(4) { rand } }
+
+  knn = KNN.new(data)
+  
+  knn.nearest_neighbours([1,2,3,4], 4)  # ([data], k's)
+    #=> [[4837, 7.43033158269445, [0.966558570073977, 0.903158898673566, 0.954567901514261, 0.988114355901207]], ...
+    
+  # Data is returned in the format
+  # [data index, distance to the input, [data points]]
+  
+  # So if we called queried the data array for 4837...
+  data[4837]
+    #=> [0.966558570073977, 0.903158898673566, 0.954567901514261, 0.988114355901207]
 
 == Copyright
 
-Copyright (c) 2009 reddavis. See LICENSE for details.
+Copyright (c) 2009 Red Davis. See LICENSE for details.

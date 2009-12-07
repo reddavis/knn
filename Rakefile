@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "k_nearest_neighbours"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.name = "knn"
+    gem.summary = %Q{Simple K Nearest Neighbour algorithm}
+    gem.description = %Q{Simple K Nearest Neighbour algorithm}
     gem.email = "reddavis@gmail.com"
-    gem.homepage = "http://github.com/reddavis/k_nearest_neighbours"
+    gem.homepage = "http://github.com/reddavis/knn"
     gem.authors = ["reddavis"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
