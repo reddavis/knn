@@ -26,6 +26,32 @@ Simple KNN Ruby implementation
   data[4837]
     #=> [0.966558570073977, 0.903158898673566, 0.954567901514261, 0.988114355901207]
 
+== Distance Measurements
+
+KNN uses the Distance Measures Gem (http://github.com/reddavis/Distance-Measures) so we get quite a range of distance measurements.
+
+The measurements currently available are:
+
+  euclidean_distance
+
+  cosine_similarity
+
+  jaccard_index
+
+  jaccard_distance
+
+  binary_jaccard_index
+
+  binary_jaccard_distance
+
+  tanimoto_coefficient
+
+To specify a particular one to use in the KNN algorithm, just provide it as an option:
+
+  KNN.new(@data, :distance_measure => :jaccard_index)
+  KNN.new(@data, :distance_measure => :cosine_similarity)
+  KNN.new(@data, :distance_measure => :tanimoto_coefficient)
+
 == Copyright
 
 Copyright (c) 2009 Red Davis. See LICENSE for details.

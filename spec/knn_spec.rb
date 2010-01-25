@@ -11,6 +11,14 @@ describe "KNN" do
     neighbours.map {|x| x[2]}.should include([50,52], [10,11])
   end
   
+  describe "Providing a wrong distance measure" do
+    it "should raise an error" do
+      lambda do
+        KNN.new(data, :distance_measure => :wrong).nearest_neighbours([2,2])
+      end.should raise_error
+    end
+  end
+  
   private
   
   def data

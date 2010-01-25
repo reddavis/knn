@@ -1,8 +1,9 @@
-require File.expand_path(File.dirname(__FILE__) + '/ext/array')
+require 'distance_measures'
 
 class KNN
-  def initialize(data)
+  def initialize(data, options={})
     @data = data
+    @distance_measure = options[:distance_measure] || :euclidean_distance
   end
   
   def nearest_neighbours(input, k=4)
@@ -12,13 +13,17 @@ class KNN
   private
   
   def find_closest_data(input, k)
-    calculated_distances = []
+    begin
+      calculated_distances = []
     
-    @data.each_with_index do |datum, index| #Ye olde english
-      distance = input.euclidean_distance_from(datum)
-      calculated_distances << [index, distance, datum]
+      @data.each_with_index do |datum, index| #Ye olde english
+        distance = input.send(@distance_measure, datum)
+        calculated_distances << [index, distance, datum]
+      end
+    
+      calculated_distances.sort {|x, y| x[1] <=> y[1]}.first(k)
+    rescue NoMethodError
+      raise "Hey, that's not a measurement. Read the README for available measurements"
     end
-    
-    calculated_distances.sort {|x, y| x[1] <=> y[1]}.first(k)
   end  
 end
