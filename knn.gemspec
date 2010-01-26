@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["reddavis"]
-  s.date = %q{2010-01-25}
+  s.date = %q{2010-01-26}
   s.description = %q{Simple K Nearest Neighbour algorithm}
   s.email = %q{reddavis@gmail.com}
   s.extra_rdoc_files = [
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "examples/example_one.rb",
+     "knn.gemspec",
      "lib/knn.rb",
      "spec/knn_spec.rb",
      "spec/spec.opts",
