@@ -56,5 +56,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<distance_measures>, [">= 0.0.0"])
   end
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'jeweler'
 end
 
