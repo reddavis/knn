@@ -6,5 +6,5 @@ data = Array.new(10000) { Array.new(4) { rand } }
 knn = KNN.new(data)
 
 Benchmark.bm do |x|
-  x.report { puts knn.nearest_neighbours([3,4,5,6], 4).inspect }
+  x.report { puts knn.nearest_neighbours([0.25,0.5,0.75,1], 4).inspect }
 end
