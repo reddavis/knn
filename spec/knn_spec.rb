@@ -4,6 +4,8 @@ describe "KNN" do
   before do
     @knn = KNN.new(data)
     @knn_2 = KNN.new(data_block){|x,y| (x.size - y.size).abs}
+    proc = Proc.new{ |x,y| (x.size - y.size).abs }
+    @knn_3 = KNN.new(data_block){|x, y| proc.call(x,y)}
   end
 
   it "should return 2 nearest neighbours (50,52 10,11)" do
@@ -16,6 +18,12 @@ describe "KNN" do
     neighbours_2 = @knn_2.nearest_neighbours([1,2,3,4], 2)
     neighbours_2.size.should == 2
     neighbours_2.map {|x| x[2]}.should include([1,1,1,1,1], [1,1,1])
+  end
+
+  it "should return 2 nearest neighbours size of 3 and 5" do
+    neighbours_3 = @knn_3.nearest_neighbours([1,2,3,4], 2)
+    neighbours_3.size.should == 2
+    neighbours_3.map {|x| x[2]}.should include([1,1,1,1,1], [1,1,1])
   end
 
   describe "Providing a wrong distance measure" do
