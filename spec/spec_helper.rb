@@ -5,6 +5,7 @@
 # files.
 require 'knn'
 require 'fixed_queue'
+require 'distance_measures'
 require 'pry'
 #
 # Given that it is always loaded, you are encouraged to keep this file as

@@ -1,5 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
+include KNN_MODULE
+
 describe "KNN" do
   before do
     @knn = KNN.new(data)
