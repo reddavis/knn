@@ -1,6 +1,6 @@
 require_relative 'fixed_queue'
 
-module KNN_MODULE
+module KNNModule
   # Mixin for calculating distance in VPNode and VPTree
   # compatable with Distance-measure gem
   module CalcDistance
