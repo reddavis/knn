@@ -5,7 +5,7 @@ Simple KNN Ruby implementation
 == Install
 
   gem sources -a -http://gemcutter.org
-  sudo gem install naive_bayes
+  sudo gem install knn
 
 == How To Use
 
